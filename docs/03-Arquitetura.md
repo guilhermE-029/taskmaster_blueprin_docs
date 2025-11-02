@@ -8,17 +8,25 @@ O sistema segue arquitetura **microserviços leve** com os principais módulos:
 - Serviço de Notificação  
 - Gateway/API  → único ponto de entrada para o frontend e para clientes externos  
 
-@startuml
-actor Usuário
-rectangle "API Gateway" {
-  rectangle "Serviço Autenticação" --> (Banco Auth)
-  rectangle "Serviço Projeto" --> (Banco Projeto)
-  rectangle "Serviço Tarefa" --> (Banco Tarefa)
-  rectangle "Serviço Notificação" --> (Broker Mensagens)
-}
-Usuário --> "API Gateway"
-@enduml
-
+      @startuml
+    
+      actor Usuário
+    
+      rectangle "API Gateway" {
+    
+        rectangle "Serviço Autenticação" --> (Banco Auth)
+    
+        rectangle "Serviço Projeto" --> (Banco Projeto)
+    
+        rectangle "Serviço Tarefa" --> (Banco Tarefa)
+    
+        rectangle "Serviço Notificação" --> (Broker Mensagens)
+    
+      }
+    
+      Usuário --> "API Gateway"
+    
+      @enduml
 
 ## Padrões de Comunicação  
 - Serviços se comunicam entre si via mensagens assíncronas (ex: Kafka/RabbitMQ) para eventos de “tarefa criada”, “tarefa mudada”.  
