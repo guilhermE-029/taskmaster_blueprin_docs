@@ -1,3 +1,3 @@
-# InterfacesAPI
+# Interfaces de API (REST)
 
-Conteúdo detalhado deve ser adicionado aqui conforme a blueprint.
+## Autenticação  
